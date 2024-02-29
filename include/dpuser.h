@@ -5,13 +5,13 @@ MICROSEMI SOC CORP LICENSE AGREEMENT REGARDING THE USE OF THIS SOFTWARE.
 INSTALLING THIS SOFTWARE INDICATES THAT YOU ACCEPT AND UNDERSTAND THIS AGREEMENT 
 AND WILL ABIDE BY IT. 
 
-Note: This license agreement (“License”) only includes the following software: 
+Note: This license agreement (ï¿½Licenseï¿½) only includes the following software: 
 DirectC. DirectC is licensed under the following terms and conditions.
 
-Hereinafter, Microsemi SoC Corp. shall be referred to as “Licensor” or “Author,” 
-whereas the other party to this License shall be referred to as “Licensee.” Each 
-party to this License shall be referred to, singularly, as a “Party,” or, 
-collectively, as the “Parties.”
+Hereinafter, Microsemi SoC Corp. shall be referred to as ï¿½Licensorï¿½ or ï¿½Author,ï¿½ 
+whereas the other party to this License shall be referred to as ï¿½Licensee.ï¿½ Each 
+party to this License shall be referred to, singularly, as a ï¿½Party,ï¿½ or, 
+collectively, as the ï¿½Parties.ï¿½
 
 Permission to use, copy, modify, and/or distribute DirectC for any purpose, with
 or without fee, is hereby granted by Licensor to Licensee, provided that the 
@@ -36,7 +36,7 @@ Assets Control including any other U.S. Government regulation applicable to the
 export, re-export, or disclosure of such controlled technical data (or the 
 products thereof) to Foreign Nationals, whether within or without the U.S., 
 including those employed by, or otherwise associated with, Licensee. Licensee 
-shall obtain Licensor’s written consent prior to submitting any request for 
+shall obtain Licensorï¿½s written consent prior to submitting any request for 
 authority to export any such technical data.
 
 ADR: Any dispute between the Parties arising from or related to this License or 
@@ -85,13 +85,13 @@ communications whether written or oral.                                     */
 /* Compiler switches */
 #define ENABLE_EMBEDDED_SUPPORT
 
-#define ENABLE_DISPLAY
+//#define ENABLE_DISPLAY
 #define ENABLE_GPIO_SUPPORT
 #define PERFORM_CRC_CHECK
-#define ENABLE_SPI_FLASH_SUPPORT
+//#define ENABLE_SPI_FLASH_SUPPORT
 #define ENABLE_G3_SUPPORT
-#define ENABLE_G4_SUPPORT
-#define ENABLE_G5_SUPPORT
+//#define ENABLE_G4_SUPPORT
+//#define ENABLE_G5_SUPPORT
 /* 
 Warning 1: RTG4 FPGA programming circuitry is not radiation hardened. 
 Please refer to the latest data on reprogramming in radiation environments.
@@ -99,7 +99,7 @@ Warning 2:  Before programming, please make sure to exit the System Controller
 Suspend Mode, which is used to protect the device from unintended behavior 
 due to single event upsets (SEUs) in radiation environment.
 */
-#define ENABLE_RTG4_SUPPORT
+//#define ENABLE_RTG4_SUPPORT
 
 #define USE_PAGING
 /* #define CHAIN_SUPPORT */
@@ -123,7 +123,7 @@ due to single event upsets (SEUs) in radiation environment.
 #define TRST    0x0u
 #define TDO     0x2u
 /*************** End of hardware related constants ************************/
-#endif
+//#endif
 
 
 

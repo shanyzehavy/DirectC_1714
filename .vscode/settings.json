@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "dpuser.h": "c",
+        "dpjtag.h": "c"
+    }
+}

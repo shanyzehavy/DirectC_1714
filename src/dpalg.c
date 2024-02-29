@@ -5,13 +5,13 @@ MICROSEMI SOC CORP LICENSE AGREEMENT REGARDING THE USE OF THIS SOFTWARE.
 INSTALLING THIS SOFTWARE INDICATES THAT YOU ACCEPT AND UNDERSTAND THIS AGREEMENT 
 AND WILL ABIDE BY IT. 
 
-Note: This license agreement (“License”) only includes the following software: 
+Note: This license agreement (ï¿½Licenseï¿½) only includes the following software: 
 DirectC. DirectC is licensed under the following terms and conditions.
 
-Hereinafter, Microsemi SoC Corp. shall be referred to as “Licensor” or “Author,” 
-whereas the other party to this License shall be referred to as “Licensee.” Each 
-party to this License shall be referred to, singularly, as a “Party,” or, 
-collectively, as the “Parties.”
+Hereinafter, Microsemi SoC Corp. shall be referred to as ï¿½Licensorï¿½ or ï¿½Author,ï¿½ 
+whereas the other party to this License shall be referred to as ï¿½Licensee.ï¿½ Each 
+party to this License shall be referred to, singularly, as a ï¿½Party,ï¿½ or, 
+collectively, as the ï¿½Parties.ï¿½
 
 Permission to use, copy, modify, and/or distribute DirectC for any purpose, with
 or without fee, is hereby granted by Licensor to Licensee, provided that the 
@@ -36,7 +36,7 @@ Assets Control including any other U.S. Government regulation applicable to the
 export, re-export, or disclosure of such controlled technical data (or the 
 products thereof) to Foreign Nationals, whether within or without the U.S., 
 including those employed by, or otherwise associated with, Licensee. Licensee 
-shall obtain Licensor’s written consent prior to submitting any request for 
+shall obtain Licensorï¿½s written consent prior to submitting any request for 
 authority to export any such technical data.
 
 ADR: Any dispute between the Parties arising from or related to this License or 
@@ -87,8 +87,6 @@ communications whether written or oral.                                     */
 #include "dpRTG4alg.h"
 #include "dpjtag.h"
 #include "dpcom.h"
-#include "dpSPIalg.h"
-#include "dpSPIprog.h"
 
 
 DPUCHAR Action_code; /* used to hold the action codes as defined in dpalg.h */
@@ -129,24 +127,24 @@ DPUCHAR dp_top (void)
     error_code = DPE_SUCCESS;  
     dp_init_com_vars();  
     Action_done = FALSE;
-    #ifdef ENABLE_SPI_FLASH_SUPPORT
-    if ((Action_code == DP_SPI_FLASH_READ_ID_ACTION_CODE) ||
-    (Action_code == DP_SPI_FLASH_READ_ACTION_CODE) ||
-    (Action_code == DP_SPI_FLASH_BLANK_CHECK_ACTION_CODE) ||
-    (Action_code == DP_SPI_FLASH_ERASE_ACTION_CODE) ||
-    (Action_code == DP_SPI_FLASH_PROGRAM_ACTION_CODE) ||
-    (Action_code == DP_SPI_FLASH_VERIFY_ACTION_CODE)
-    )
-    {    
-        goto_jtag_state(JTAG_TEST_LOGIC_RESET, 0u);
-        dp_read_idcode();
-        if ((device_ID & G5M_FAMILY_MASK) == (G5M_FAMILY))
-        {
-            dp_top_spi_flash();
-            Action_done = TRUE;
-        }
-    }
-    #endif
+    // #ifdef ENABLE_SPI_FLASH_SUPPORT
+    // if ((Action_code == DP_SPI_FLASH_READ_ID_ACTION_CODE) ||
+    // (Action_code == DP_SPI_FLASH_READ_ACTION_CODE) ||
+    // (Action_code == DP_SPI_FLASH_BLANK_CHECK_ACTION_CODE) ||
+    // (Action_code == DP_SPI_FLASH_ERASE_ACTION_CODE) ||
+    // (Action_code == DP_SPI_FLASH_PROGRAM_ACTION_CODE) ||
+    // (Action_code == DP_SPI_FLASH_VERIFY_ACTION_CODE)
+    // )
+    // {    
+    //     goto_jtag_state(JTAG_TEST_LOGIC_RESET, 0u);
+    //     dp_read_idcode();
+    //     if ((device_ID & G5M_FAMILY_MASK) == (G5M_FAMILY))
+    //     {
+    //         dp_top_spi_flash();
+    //         Action_done = TRUE;
+    //     }
+    // }
+    // #endif
     
     if (Action_done == FALSE)
     {
